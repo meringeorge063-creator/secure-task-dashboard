@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <a class="logout" href="/logout">Logout</a>
+
+    <h3>Registered Users</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Role</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

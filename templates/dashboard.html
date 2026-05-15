@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Welcome, {{ username }}</h2>
+    <a class="logout" href="/logout">Logout</a>
+
+    <form method="POST">
+        <input type="text" name="task" placeholder="Enter new task" required>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <h3>Your Tasks</h3>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task[1] }}
+            <a class="delete" href="/delete/{{ task[0] }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
